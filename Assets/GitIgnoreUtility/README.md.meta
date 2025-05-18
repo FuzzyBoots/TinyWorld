@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 307ad1a28131fb845a25fcd1b31c69f2
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 293161
+  packageName: gitIgnore Utility
+  packageVersion: 1.0.1
+  assetPath: Assets/GitIgnoreUtility/README.md
+  uploadId: 689513

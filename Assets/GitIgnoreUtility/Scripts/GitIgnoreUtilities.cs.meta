@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 1cac4cf946ee6e24bb86f494a15282bc
+timeCreated: 1671226726
+AssetOrigin:
+  serializedVersion: 1
+  productId: 293161
+  packageName: gitIgnore Utility
+  packageVersion: 1.0.1
+  assetPath: Assets/GitIgnoreUtility/Scripts/GitIgnoreUtilities.cs
+  uploadId: 689513

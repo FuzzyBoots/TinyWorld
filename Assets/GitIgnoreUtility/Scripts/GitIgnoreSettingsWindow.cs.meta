@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: a4748552423e8564bb5001b758b55c41
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 293161
+  packageName: gitIgnore Utility
+  packageVersion: 1.0.1
+  assetPath: Assets/GitIgnoreUtility/Scripts/GitIgnoreSettingsWindow.cs
+  uploadId: 689513

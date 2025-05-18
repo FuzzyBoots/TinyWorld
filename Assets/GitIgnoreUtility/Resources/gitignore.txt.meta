@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 75cbeaa83108aea458d5087ad0e8959d
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 293161
+  packageName: gitIgnore Utility
+  packageVersion: 1.0.1
+  assetPath: Assets/GitIgnoreUtility/Resources/gitignore.txt
+  uploadId: 689513

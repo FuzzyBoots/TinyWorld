@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 8a276711c85e5d949954e077d5f0e136
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 317361
+  packageName: Project Syncer
+  packageVersion: 0.7
+  assetPath: Assets/Editor/ProjectSyncer/Project Syncer Tool Documentation.pdf
+  uploadId: 754008

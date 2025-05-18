@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 5c3447ce0573be34098cc456620dd72b
+AssetOrigin:
+  serializedVersion: 1
+  productId: 317361
+  packageName: Project Syncer
+  packageVersion: 0.7
+  assetPath: Assets/Editor/ProjectSyncer/ProjectSyncerWindow.cs
+  uploadId: 754008

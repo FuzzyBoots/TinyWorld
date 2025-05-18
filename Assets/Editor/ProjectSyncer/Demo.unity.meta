@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: f64cdf0286b52c344b9f2f0d77c0b20c
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 317361
+  packageName: Project Syncer
+  packageVersion: 0.7
+  assetPath: Assets/Editor/ProjectSyncer/Demo.unity
+  uploadId: 754008
