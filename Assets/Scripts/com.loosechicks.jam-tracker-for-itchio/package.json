@@ -1,0 +1,11 @@
+{
+  "name": "com.loosechicks.jam-tracker-for-itchio",
+  "version": "1.0.0",
+  "displayName": "Jam Tracker for Itch.io",
+  "description": "Shows time spent and left until the end of the jam",
+  "unity": "2022.1",
+  "author": {
+    "name": "loose chicks",
+    "url": "https://loosechicks.omg.lol"
+  }
+}

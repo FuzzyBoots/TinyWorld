@@ -73,4 +73,6 @@ crashlytics-build.properties
 .idea
 
 # Proprietary Assets
-*/AssetInventory*
+*/AssetInventory*Assets/EasyColliderEditor/
+Assets/Editor/ProjectSyncer/
+Assets/AssetInventory/

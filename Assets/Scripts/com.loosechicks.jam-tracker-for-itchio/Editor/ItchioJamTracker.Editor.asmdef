@@ -1,0 +1,24 @@
+{
+    "name": "JamTrackerItchio.Editor",
+    "rootNamespace": "JamTrackerItchio.Editor",
+    "references": [
+        "GUID:8d62da4aabd2a19419c7378d23ea5849"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.paps.unity-toolbar-extender-ui-toolkit",
+            "expression": "",
+            "define": "HAS_TOOLBAR_EXTENDER"
+        }
+    ],
+    "noEngineReferences": false
+}
