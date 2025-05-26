@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 50c8a69299d7d5c42a86909e7330230c
+AssetOrigin:
+  serializedVersion: 1
+  productId: 313418
+  packageName: Game Jam Tracker for itch.io
+  packageVersion: 1.0
+  assetPath: Assets/Scripts/com.loosechicks.jam-tracker-for-itchio/Editor/DependencyInstaller.cs
+  uploadId: 742152
