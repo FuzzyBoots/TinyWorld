@@ -1,12 +1,15 @@
+using NUnit.Framework;
 using System;
 using UnityEngine;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
 
 [RequireComponent (typeof(NavMeshAgent))]
+[RequireComponent(typeof(Animator))]
 public class Snatcher : MonoBehaviour
 {
     NavMeshAgent _agent;
+    Animator _animator;
     [SerializeField] GameObject _target;
     [SerializeField] Vector3 _randomDestination;
 
@@ -14,10 +17,22 @@ public class Snatcher : MonoBehaviour
     [SerializeField] private int _blockGoal;
     [SerializeField] private float _threshold = 2f;
 
+    [SerializeField] GameObject blockPlacer;
+
+    public PortalScript portal;
+
+    public void SetGoal(int goal)
+    {
+        _blockGoal = goal;
+    }
+
+    public bool IsHolding { get; internal set; }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         _agent = GetComponent<NavMeshAgent>();
+        _animator = GetComponent<Animator>();
 
         SetRandomLocation();
     }
@@ -31,7 +46,10 @@ public class Snatcher : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_target != null)
+        if (IsHolding)
+        {
+            _agent.SetDestination(portal.transform.position);
+        } else if (_target != null)
         {
             _agent.SetDestination(_target.transform.position);
         } else { 
@@ -43,37 +61,41 @@ public class Snatcher : MonoBehaviour
 
             _target = LocateTarget();
         }
+
+        _animator.SetFloat("Speed", _agent.speed);
     }
 
     private GameObject LocateTarget()
     {
         GameObject target = null;
-        float closestDistance = Mathf.Infinity;
-        Collider[] colliders = Physics.OverlapSphere(transform.position, _searchRadius, LayerMask.GetMask("Block"));
-        foreach (Collider collider in colliders)
+        if (blockPlacer != null)
         {
-            GameObject gameObject = collider.gameObject;
-            if (TryGetComponent<BlockScript>(out BlockScript block) && block._blockID == _blockGoal)
+            BlockScript[] blocks = blockPlacer.GetComponentsInChildren<BlockScript>();
+
+            if (blocks.Length > 0)            
             {
-                Debug.Log("Found a block with a matching goal", gameObject);
-                float distance = Vector3.Distance(transform.position, gameObject.transform.position);
-                if (distance < closestDistance)
+                int index = Random.Range(0, blocks.Length);
+                if (blocks[index]._blockID == _blockGoal)
                 {
-                    closestDistance = distance;
-                    target = gameObject;
+                    target = blocks[index].gameObject;
+                } else
+                {
+                    // Debug.Log($"Rejected block with ID of {blocks[index]._blockID}. Wanted {_blockGoal}");
                 }
             }
-        }
+        }        
 
         return target;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (TryGetComponent<BlockScript>(out BlockScript block) && block._blockID == _blockGoal)
+        if (other.gameObject.TryGetComponent<BlockScript>(out BlockScript block) && block._blockID == _blockGoal)
         {
-            Debug.Log("Found the block");
-            Destroy(collision.gameObject);
+            _animator.SetBool("Holding", true);
+            IsHolding = true;
+            other.gameObject.transform.parent = transform;
+            _agent.SetDestination(portal.gameObject.transform.position);
         }
     }
 }
